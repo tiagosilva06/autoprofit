@@ -29,3 +29,11 @@ CREATE TABLE IF NOT EXISTS sales (
     total_revenue   REAL NOT NULL,
     avg_discount    REAL NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS incentives (
+    id          INTEGER PRIMARY KEY,
+    model_id    INTEGER NOT NULL REFERENCES models(id),
+    month_ref   TEXT NOT NULL,
+    type        TEXT NOT NULL,
+    value       REAL NOT NULL
+);
