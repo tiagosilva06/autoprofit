@@ -20,3 +20,12 @@ CREATE TABLE IF NOT EXISTS prices (
     max_discount    REAL NOT NULL,
     factory_cost    REAL NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS sales (
+    id              INTEGER PRIMARY KEY,
+    model_id        INTEGER NOT NULL REFERENCES models(id),
+    month_ref       TEXT NOT NULL,
+    units           INTEGER NOT NULL,
+    total_revenue   REAL NOT NULL,
+    avg_discount    REAL NOT NULL
+);
